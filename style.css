@@ -4,44 +4,24 @@ html, body {
   background: #f7f3ee;
 }
 
+body {
+  min-height: 100dvh;
+}
+
 main {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 12px;
   box-sizing: border-box;
 }
 
 img {
   display: block;
   width: 100%;
-  height: auto;
   max-width: 1100px;
-  max-height: 90vh;
+  height: auto;
+  max-height: 88dvh;
   object-fit: contain;
-}
-
-/* Tablets */
-@media (max-width: 900px) {
-  main {
-    padding: 20px;
-  }
-
-  img {
-    max-width: 95vw;
-    max-height: 90vh;
-  }
-}
-
-/* Phones */
-@media (max-width: 600px) {
-  main {
-    padding: 12px;
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 92vh;
-  }
 }
