@@ -1,7 +1,9 @@
 const birdSounds = [
   "/sounds/birds1.wav",
   "/sounds/birds2.wav",
-  "/sounds/birds3.wav"
+  "/sounds/birds3.wav",
+  "/sounds/birds4.wav",
+  "/sounds/birds5.wav"
 ];
 
 const audio = document.getElementById("birdAudio");
