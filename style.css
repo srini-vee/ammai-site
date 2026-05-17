@@ -36,8 +36,8 @@ body {
 
 .bird-controls {
   position: absolute;
-  right: 8%;
-  bottom: 24%;
+  right: 5%;
+  bottom: 15%;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@ body {
 .bird-card {
   display: none;
   margin-top: 1rem;
-  width: 340px;
+  width: 310px;
   padding: 0.85rem;
   border-radius: 18px;
   background: rgba(255, 248, 235, 0.84);
@@ -103,12 +103,25 @@ body {
 
 @media (max-width: 900px) {
   .bird-controls {
-    right: 6%;
-    bottom: 18%;
+    right: 4%;
+    bottom: 12%;
   }
 
   .bird-card {
-    width: 300px;
+    width: 280px;
+  }
+
+  .bird-image {
+    width: 76px;
+    height: 76px;
+  }
+
+  .bird-name {
+    font-size: 0.95rem;
+  }
+
+  .bird-note {
+    font-size: 0.8rem;
   }
 }
 
