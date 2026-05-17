@@ -28,6 +28,36 @@ const birds = [
     note: "Restless, ordinary, beloved — always near people.",
     sound: "./sounds/red-vented-bulbul.mp3",
     image: "./birds/red-vented-bulbul.webp"
+  },
+  {
+    name: "Indian Pitta",
+    note: "A bright forest visitor, often heard at dawn and dusk.",
+    sound: "./sounds/indian-pitta.mp3",
+    image: "./birds/indian-pitta.webp"
+  },
+  {
+    name: "Common Hawk-Cuckoo",
+    note: "A restless summer call, rising through the heat before the rains.",
+    sound: "./sounds/common-hawk-cuckoo.mp3",
+    image: "./birds/common-hawk-cuckoo.webp"
+  },
+  {
+    name: "Greater Coucal",
+    note: "A deep, old-sounding call from gardens, trees, and quiet mornings.",
+    sound: "./sounds/greater-coucal.mp3",
+    image: "./birds/greater-coucal.webp"
+  },
+  {
+    name: "Rufous Treepie",
+    note: "Lively and musical, moving through trees with a long graceful tail.",
+    sound: "./sounds/rufous-treepie.mp3",
+    image: "./birds/rufous-treepie.webp"
+  },
+  {
+    name: "White-cheeked Barbet",
+    note: "A repeated green note from wooded hills and old trees.",
+    sound: "./sounds/white-cheeked-barbet.mp3",
+    image: "./birds/white-cheeked-barbet.webp"
   }
 ];
 
