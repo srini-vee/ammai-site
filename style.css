@@ -21,7 +21,7 @@ body {
   overflow: hidden;
 }
 
-/* Desktop/tablet stage: matches your PNG boundary */
+/* Matches your PNG boundary */
 .stage {
   position: relative;
   width: min(100vw, calc(100vh * 1.3714));
@@ -127,25 +127,31 @@ body {
   }
 }
 
-/* Phone fix */
+/* Phone */
 @media (max-width: 700px) {
   html,
   body {
-    height: 100%;
-    overflow: hidden;
+    margin: 0;
+    min-height: 100%;
+    overflow-x: hidden;
   }
 
   .page,
   .hero {
-    height: 100svh;
-    min-height: 100svh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .stage {
-    width: 100vw;
-    height: 100svh;
     position: relative;
+    width: 100vw;
+    height: calc(100vw / 1.3714);
+    max-height: 100svh;
   }
 
   .mother-image {
@@ -153,42 +159,47 @@ body {
     height: 100%;
     object-fit: contain;
     object-position: center top;
+    display: block;
   }
 
   .bird-controls {
-    position: fixed;
-    left: 1rem;
-    right: 1rem;
-    bottom: max(1rem, env(safe-area-inset-bottom));
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+    left: auto;
     z-index: 10;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .bird-button {
-    font-size: 0.95rem;
-    padding: 0.75rem 1.1rem;
+    font-size: 0.78rem;
+    padding: 0.55rem 0.85rem;
   }
 
   .bird-card {
-    width: min(88vw, 320px);
-    margin-top: 0.75rem;
-    padding: 0.7rem;
+    width: 220px;
+    margin-top: 0.5rem;
+    padding: 0.55rem;
+    border-radius: 14px;
   }
 
   .bird-card.visible {
     display: flex;
+    gap: 0.55rem;
   }
 
   .bird-image {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
   }
 
   .bird-name {
-    font-size: 0.9rem;
+    font-size: 0.78rem;
   }
 
   .bird-note {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    line-height: 1.25;
   }
 }
