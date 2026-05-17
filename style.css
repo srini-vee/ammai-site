@@ -85,7 +85,7 @@ body {
   height: 64px;
   object-fit: cover;
   border-radius: 12px;
-  filter: grayscale(45%) sepia(65%) saturate(60%) contrast(92%) brightness(108%);
+  filter: sepia(25%) saturate(75%) contrast(92%) brightness(106%);
   opacity: 0.86;
 }
 
