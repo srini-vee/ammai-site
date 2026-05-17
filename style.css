@@ -16,6 +16,7 @@ body {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  background: #f7efe4;
 }
 
 .mother-image {
@@ -23,13 +24,14 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .bird-controls {
   position: absolute;
-  right: 13%;
-  bottom: 18%;
+  right: 17%;
+  bottom: 20%;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -42,10 +44,14 @@ body {
   padding: 0.85rem 1.25rem;
   background: rgba(54, 42, 32, 0.95);
   color: #fff7ec;
-  font-family: Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.bird-button:hover {
+  background: rgba(42, 32, 24, 0.98);
 }
 
 .bird-card {
@@ -54,7 +60,7 @@ body {
   width: 360px;
   padding: 0.85rem;
   border-radius: 18px;
-  background: rgba(255, 248, 235, 0.78);
+  background: rgba(255, 248, 235, 0.82);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(6px);
 }
@@ -75,7 +81,7 @@ body {
 }
 
 .bird-name {
-  font-family: Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   font-weight: 700;
   color: #3c3128;
@@ -83,20 +89,58 @@ body {
 
 .bird-note {
   margin-top: 0.25rem;
-  font-family: Georgia, serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 0.85rem;
   line-height: 1.35;
   color: rgba(60, 49, 40, 0.78);
 }
 
+@media (max-width: 900px) {
+  .bird-controls {
+    right: 8%;
+    bottom: 12%;
+  }
+
+  .bird-card {
+    width: 320px;
+  }
+}
+
 @media (max-width: 700px) {
+  .hero {
+    min-height: 100vh;
+  }
+
+  .mother-image {
+    object-fit: contain;
+    object-position: center top;
+  }
+
   .bird-controls {
     right: 1.25rem;
     left: 1.25rem;
     bottom: 2rem;
   }
 
+  .bird-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 1.1rem;
+  }
+
   .bird-card {
     width: auto;
+  }
+
+  .bird-image {
+    width: 76px;
+    height: 76px;
+  }
+
+  .bird-name {
+    font-size: 0.95rem;
+  }
+
+  .bird-note {
+    font-size: 0.8rem;
   }
 }
