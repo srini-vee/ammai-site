@@ -72,6 +72,7 @@ body {
   background: rgba(255, 248, 235, 0.76);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
   backdrop-filter: blur(6px);
+  box-sizing: border-box;
 }
 
 .bird-card.visible {
@@ -213,31 +214,44 @@ body {
   }
 
   .bird-card {
-    width: 230px;
+    width: 235px;
+    height: 80px;
     margin-top: 0.45rem;
     padding: 0.5rem;
     border-radius: 14px;
+    box-sizing: border-box;
   }
 
   .bird-card.visible {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
   }
 
   .bird-image {
     width: 46px;
     height: 46px;
     border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .bird-card-text {
+    min-width: 0;
+    flex: 1;
   }
 
   .bird-name {
     font-size: 0.76rem;
+    line-height: 1.1;
+    min-height: 0.9rem;
   }
 
   .bird-note {
-    font-size: 0.62rem;
-    line-height: 1.25;
-    min-height: 2.5em;
+    font-size: 0.58rem;
+    line-height: 1.2;
+    min-height: 3.2em;
+    max-height: 3.2em;
+    overflow: hidden;
   }
 
   .next-bird-button {
@@ -245,5 +259,6 @@ body {
     height: 26px;
     min-width: 26px;
     font-size: 1.05rem;
+    flex-shrink: 0;
   }
 }
