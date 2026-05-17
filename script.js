@@ -1,3 +1,4 @@
+birdCard.classList.remove("visible");
 const birds = [
   {
     name: "Asian Koel",
