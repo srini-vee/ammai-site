@@ -1,61 +1,61 @@
 const birds = [
   {
     name: "Asian Koel",
-    note: "A familiar summer call across Indian homes and gardens.",
+    note: "A familiar summer call heard around Indian homes, gardens, and warm afternoons.",
     sound: "./sounds/asian-koel.mp3",
     image: "./birds/asian-koel.webp"
   },
   {
     name: "Coppersmith Barbet",
-    note: "A small temple-bell sound from trees and warm mornings.",
+    note: "A small bell-like call from leafy trees, steady, bright, and easy to remember.",
     sound: "./sounds/coppersmith-barbet.mp3",
     image: "./birds/coppersmith-barbet.webp"
   },
   {
     name: "Indian Robin",
-    note: "A small bird with a bright, watchful presence.",
+    note: "A small watchful bird with a clear presence around gardens, walls, and open ground.",
     sound: "./sounds/indian-robin.mp3",
     image: "./birds/indian-robin.webp"
   },
   {
     name: "Purple Sunbird",
-    note: "Small, quick, and drawn to flowers.",
+    note: "Small, quick, and drawn to flowers, carrying a delicate sound through the garden.",
     sound: "./sounds/purple-sunbird.mp3",
     image: "./birds/purple-sunbird.webp"
   },
   {
     name: "Red-vented Bulbul",
-    note: "Restless, ordinary, beloved — always near people.",
+    note: "Restless and familiar, often close to people, trees, courtyards, and flowering plants.",
     sound: "./sounds/red-vented-bulbul.mp3",
     image: "./birds/red-vented-bulbul.webp"
   },
   {
     name: "Indian Pitta",
-    note: "A bright forest visitor, often heard at dawn and dusk.",
+    note: "A bright forest visitor, often heard at dawn and dusk after the first warm rains.",
     sound: "./sounds/indian-pitta.mp3",
     image: "./birds/indian-pitta.webp"
   },
   {
     name: "Common Hawk-Cuckoo",
-    note: "A restless summer call, rising through the heat before the rains.",
+    note: "A rising summer call, restless and insistent, carrying through heat before the rains.",
     sound: "./sounds/common-hawk-cuckoo.mp3",
     image: "./birds/common-hawk-cuckoo.webp"
   },
   {
     name: "Greater Coucal",
-    note: "A deep, old-sounding call from gardens, trees, and quiet mornings.",
+    note: "A deep old-sounding call from gardens, thickets, trees, and quiet morning shade.",
     sound: "./sounds/greater-coucal.mp3",
     image: "./birds/greater-coucal.webp"
   },
   {
     name: "Rufous Treepie",
-    note: "Lively and musical, moving through trees with a long graceful tail.",
+    note: "Lively and musical, moving through trees with a long tail and an alert presence.",
     sound: "./sounds/rufous-treepie.mp3",
     image: "./birds/rufous-treepie.webp"
   },
   {
     name: "White-cheeked Barbet",
-    note: "A repeated green note from wooded hills and old trees.",
+    note: "A repeated green note from wooded hills, old trees, gardens, and monsoon edges.",
     sound: "./sounds/white-cheeked-barbet.mp3",
     image: "./birds/white-cheeked-barbet.webp"
   }
