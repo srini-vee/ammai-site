@@ -1,34 +1,33 @@
-
 const birds = [
   {
     name: "Asian Koel",
-    note: "A familiar, haunting call often heard in Indian cities and gardens.",
-    sound: "sounds/asian-koel.mp3",
-    image: "birds/asian-koel.webp"
+    note: "A familiar summer call across Indian homes and gardens.",
+    sound: "./sounds/asian-koel.mp3",
+    image: "./birds/asian-koel.webp"
   },
   {
     name: "Coppersmith Barbet",
-    note: "Known for its repetitive, temple-bell-like call.",
-    sound: "sounds/coppersmith-barbet.mp3",
-    image: "birds/coppersmith-barbet.webp"
+    note: "A small temple-bell sound from trees and warm mornings.",
+    sound: "./sounds/coppersmith-barbet.mp3",
+    image: "./birds/coppersmith-barbet.webp"
   },
   {
     name: "Indian Robin",
-    note: "A small, expressive bird with a sharp, bright song.",
-    sound: "sounds/indian-robin.mp3",
-    image: "birds/indian-robin.webp"
+    note: "A small bird with a bright, watchful presence.",
+    sound: "./sounds/indian-robin.mp3",
+    image: "./birds/indian-robin.webp"
   },
   {
     name: "Purple Sunbird",
-    note: "Often seen around flowers, with a delicate, quick call.",
-    sound: "sounds/purple-sunbird.mp3",
-    image: "birds/purple-sunbird.webp"
+    note: "Small, quick, and drawn to flowers.",
+    sound: "./sounds/purple-sunbird.mp3",
+    image: "./birds/purple-sunbird.webp"
   },
   {
     name: "Red-vented Bulbul",
-    note: "Common around homes, parks, and flowering trees.",
-    sound: "sounds/red-vented-bulbul.mp3",
-    image: "birds/red-vented-bulbul.webp"
+    note: "Restless, ordinary, beloved — always near people.",
+    sound: "./sounds/red-vented-bulbul.mp3",
+    image: "./birds/red-vented-bulbul.webp"
   }
 ];
 
@@ -41,6 +40,8 @@ const birdNote = document.getElementById("birdNote");
 let currentAudio = null;
 let currentBirdIndex = null;
 let isPlaying = false;
+
+birdCard.classList.remove("visible");
 
 function chooseRandomBirdIndex() {
   if (birds.length === 1) return 0;
@@ -73,7 +74,7 @@ function stopBirdsong() {
   }
 
   isPlaying = false;
-  birdButton.textContent = "Hear birdsong";
+  birdButton.textContent = "Listen";
   birdButton.setAttribute("aria-pressed", "false");
   hideBirdCard();
 }
@@ -93,7 +94,7 @@ function playRandomBirdsong() {
 
   showBirdCard(bird);
 
-  birdButton.textContent = "Stop birdsong";
+  birdButton.textContent = "Stop";
   birdButton.setAttribute("aria-pressed", "true");
 
   currentAudio.play().catch(() => {
@@ -103,7 +104,7 @@ function playRandomBirdsong() {
 
   currentAudio.addEventListener("ended", () => {
     isPlaying = false;
-    birdButton.textContent = "Hear birdsong";
+    birdButton.textContent = "Listen";
     birdButton.setAttribute("aria-pressed", "false");
     hideBirdCard();
   });
