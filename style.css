@@ -66,9 +66,9 @@ body {
 .bird-card {
   display: none;
   margin-top: 0.65rem;
-  width: 300px;
-  height: 92px;
-  padding: 0.65rem;
+  width: 315px;
+  min-height: 108px;
+  padding: 0.7rem;
   border-radius: 16px;
   background: rgba(255, 248, 235, 0.76);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
@@ -100,19 +100,16 @@ body {
 .bird-name {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.88rem;
-  line-height: 1.1;
+  line-height: 1.12;
   font-weight: 600;
   color: rgba(60, 49, 40, 0.9);
 }
 
 .bird-note {
-  margin-top: 0.2rem;
+  margin-top: 0.22rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.72rem;
-  line-height: 1.25;
-  min-height: 3em;
-  max-height: 3em;
-  overflow: hidden;
+  font-size: 0.7rem;
+  line-height: 1.28;
   color: rgba(60, 49, 40, 0.68);
 }
 
@@ -145,8 +142,8 @@ body {
   }
 
   .bird-card {
-    width: 280px;
-    height: 88px;
+    width: 295px;
+    min-height: 104px;
   }
 
   .bird-image {
@@ -159,11 +156,8 @@ body {
   }
 
   .bird-note {
-    font-size: 0.68rem;
-    line-height: 1.25;
-    min-height: 3em;
-    max-height: 3em;
-    overflow: hidden;
+    font-size: 0.66rem;
+    line-height: 1.26;
   }
 
   .next-bird-button {
@@ -224,8 +218,8 @@ body {
   }
 
   .bird-card {
-    width: 235px;
-    height: 80px;
+    width: 245px;
+    min-height: 92px;
     margin-top: 0.45rem;
     padding: 0.5rem;
     border-radius: 14px;
@@ -253,15 +247,11 @@ body {
   .bird-name {
     font-size: 0.76rem;
     line-height: 1.1;
-    min-height: 0.9rem;
   }
 
   .bird-note {
-    font-size: 0.58rem;
-    line-height: 1.2;
-    min-height: 3.2em;
-    max-height: 3.2em;
-    overflow: hidden;
+    font-size: 0.57rem;
+    line-height: 1.22;
   }
 
   .next-bird-button {
