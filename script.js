@@ -2,57 +2,55 @@ const birds = [
   {
     name: "Asian Koel",
     note: "A familiar, haunting call often heard in Indian cities and gardens.",
-    sound: "sounds/birds1.wav",
-    image: "birds/asian-koel.jpg"
-  },
-  {
-    name: "Indian Robin",
-    note: "A small garden bird with a gentle, bright presence.",
-    sound: "sounds/birds2.wav",
-    image: "birds/indian-robin.jpg"
-  },
-  {
-    name: "Red-vented Bulbul",
-    note: "Common around homes, trees, and flowering plants.",
-    sound: "sounds/birds3.wav",
-    image: "birds/red-vented-bulbul.jpg"
+    sound: "sounds/asian-koel.mp3",
+    image: "birds/asian-koel.webp"
   },
   {
     name: "Coppersmith Barbet",
-    note: "Known for its steady tuk-tuk-tuk call from leafy trees.",
-    sound: "sounds/birds4.wav",
-    image: "birds/coppersmith-barbet.jpg"
+    note: "Known for its repetitive, temple-bell-like call.",
+    sound: "sounds/coppersmith-barbet.mp3",
+    image: "birds/coppersmith-barbet.webp"
+  },
+  {
+    name: "Indian Robin",
+    note: "A small, expressive bird with a sharp, bright song.",
+    sound: "sounds/indian-robin.mp3",
+    image: "birds/indian-robin.webp"
   },
   {
     name: "Purple Sunbird",
-    note: "A tiny nectar-loving bird often seen around flowers.",
-    sound: "sounds/birds5.wav",
-    image: "birds/purple-sunbird.jpg"
+    note: "Often seen around flowers, with a delicate, quick call.",
+    sound: "sounds/purple-sunbird.mp3",
+    image: "birds/purple-sunbird.webp"
+  },
+  {
+    name: "Red-vented Bulbul",
+    note: "Common around homes, parks, and flowering trees.",
+    sound: "sounds/red-vented-bulbul.mp3",
+    image: "birds/red-vented-bulbul.webp"
   }
 ];
 
 const birdButton = document.getElementById("birdButton");
-const buttonText = document.getElementById("buttonText");
-const buttonIcon = document.getElementById("buttonIcon");
-const birdAudio = document.getElementById("birdAudio");
 const birdCard = document.getElementById("birdCard");
 const birdImage = document.getElementById("birdImage");
 const birdName = document.getElementById("birdName");
 const birdNote = document.getElementById("birdNote");
 
+let currentAudio = null;
+let currentBirdIndex = null;
 let isPlaying = false;
-let lastBirdIndex = -1;
 
-function getRandomBird() {
-  if (birds.length === 1) return birds[0];
+function chooseRandomBirdIndex() {
+  if (birds.length === 1) return 0;
 
   let nextIndex;
+
   do {
     nextIndex = Math.floor(Math.random() * birds.length);
-  } while (nextIndex === lastBirdIndex);
+  } while (nextIndex === currentBirdIndex);
 
-  lastBirdIndex = nextIndex;
-  return birds[nextIndex];
+  return nextIndex;
 }
 
 function showBirdCard(bird) {
@@ -60,44 +58,53 @@ function showBirdCard(bird) {
   birdImage.alt = bird.name;
   birdName.textContent = bird.name;
   birdNote.textContent = bird.note;
-  birdCard.classList.remove("hidden");
+  birdCard.classList.add("visible");
 }
 
-function setButtonPlaying() {
-  isPlaying = true;
-  birdButton.classList.add("is-playing");
-  birdButton.setAttribute("aria-pressed", "true");
-  buttonIcon.textContent = "■";
-  buttonText.textContent = "Stop birdsong";
-}
-
-function setButtonStopped() {
-  isPlaying = false;
-  birdButton.classList.remove("is-playing");
-  birdButton.setAttribute("aria-pressed", "false");
-  buttonIcon.textContent = "♪";
-  buttonText.textContent = "Play birdsong";
+function hideBirdCard() {
+  birdCard.classList.remove("visible");
 }
 
 function stopBirdsong() {
-  birdAudio.pause();
-  birdAudio.currentTime = 0;
-  setButtonStopped();
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+
+  isPlaying = false;
+  birdButton.textContent = "Hear birdsong";
+  birdButton.setAttribute("aria-pressed", "false");
+  hideBirdCard();
 }
 
 function playRandomBirdsong() {
-  const bird = getRandomBird();
+  const nextIndex = chooseRandomBirdIndex();
+  const bird = birds[nextIndex];
 
-  birdAudio.pause();
-  birdAudio.currentTime = 0;
-  birdAudio.src = bird.sound;
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+
+  currentAudio = new Audio(bird.sound);
+  currentBirdIndex = nextIndex;
+  isPlaying = true;
 
   showBirdCard(bird);
-  setButtonPlaying();
 
-  birdAudio.play().catch(() => {
-    setButtonStopped();
-    buttonText.textContent = "Tap again to play";
+  birdButton.textContent = "Stop birdsong";
+  birdButton.setAttribute("aria-pressed", "true");
+
+  currentAudio.play().catch(() => {
+    stopBirdsong();
+    alert("The birdsong could not play. Please check that the sound file path and filename are correct.");
+  });
+
+  currentAudio.addEventListener("ended", () => {
+    isPlaying = false;
+    birdButton.textContent = "Hear birdsong";
+    birdButton.setAttribute("aria-pressed", "false");
+    hideBirdCard();
   });
 }
 
@@ -107,8 +114,4 @@ birdButton.addEventListener("click", () => {
   } else {
     playRandomBirdsong();
   }
-});
-
-birdAudio.addEventListener("ended", () => {
-  setButtonStopped();
 });
