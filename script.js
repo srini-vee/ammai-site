@@ -32,6 +32,7 @@ const birds = [
 ];
 
 const birdButton = document.getElementById("birdButton");
+const nextBirdButton = document.getElementById("nextBirdButton");
 const birdCard = document.getElementById("birdCard");
 const birdImage = document.getElementById("birdImage");
 const birdName = document.getElementById("birdName");
@@ -116,4 +117,9 @@ birdButton.addEventListener("click", () => {
   } else {
     playRandomBirdsong();
   }
+});
+
+nextBirdButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  playRandomBirdsong();
 });
