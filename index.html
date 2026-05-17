@@ -6,43 +6,49 @@
   <title>Ammai</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <main class="page-shell">
+  <main class="page">
     <section class="hero">
-      <div class="portrait-wrap" aria-hidden="true">
-        <!-- Replace ammai.png with your actual background/portrait image file name if different -->
-        <img src="ammai.png" alt="" class="portrait" />
+      <div class="image-wrap">
+        <img
+          src="ammai.png"
+          alt="A soft sepia portrait"
+          class="mother-image"
+        />
       </div>
 
-      <div class="content-card">
-        <p class="eyebrow">அம்மை</p>
-        <h1>Ammai</h1>
-        <p class="subtitle">A quiet tribute to memory, kindness, birds, flowers, and care.</p>
+      <div class="content">
+        <p class="eyebrow">In memory</p>
 
-        <p class="body-copy">
-          This page is a small beginning — a place to hold fragments of love, memory,
-          and the gentle presence of nature.
+        <h1>Ammai</h1>
+        <h2>அம்மை</h2>
+
+        <p class="intro">
+          A quiet tribute to memory, tenderness, birdsong, and the presence that remains.
         </p>
 
-        <div class="controls">
-          <button id="birdButton" class="bird-button" type="button" aria-pressed="false">
-            <span id="buttonIcon">♪</span>
-            <span id="buttonText">Play birdsong</span>
-          </button>
-        </div>
+        <button id="birdButton" class="bird-button" aria-pressed="false">
+          Hear birdsong
+        </button>
 
-        <div id="birdCard" class="bird-card hidden" aria-live="polite">
-          <img id="birdImage" src="" alt="" />
-          <div class="bird-info">
-            <p id="birdName" class="bird-name"></p>
-            <p id="birdNote" class="bird-note"></p>
+        <div id="birdCard" class="bird-card" aria-live="polite">
+          <img
+            id="birdImage"
+            src=""
+            alt=""
+            class="bird-image"
+          />
+
+          <div class="bird-card-text">
+            <div id="birdName" class="bird-name"></div>
+            <div id="birdNote" class="bird-note"></div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <audio id="birdAudio" preload="none"></audio>
   <script src="script.js"></script>
 </body>
 </html>
