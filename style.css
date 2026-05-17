@@ -106,6 +106,7 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.72rem;
   line-height: 1.32;
+  min-height: 2.6em;
   color: rgba(60, 49, 40, 0.68);
 }
 
@@ -151,6 +152,7 @@ body {
 
   .bird-note {
     font-size: 0.68rem;
+    min-height: 2.6em;
   }
 
   .next-bird-button {
@@ -235,6 +237,7 @@ body {
   .bird-note {
     font-size: 0.62rem;
     line-height: 1.25;
+    min-height: 2.5em;
   }
 
   .next-bird-button {
