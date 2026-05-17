@@ -1,4 +1,4 @@
-birdCard.classList.remove("visible");
+
 const birds = [
   {
     name: "Asian Koel",
@@ -31,7 +31,7 @@ const birds = [
     image: "birds/red-vented-bulbul.webp"
   }
 ];
-
+birdCard.classList.remove("visible");
 const birdButton = document.getElementById("birdButton");
 const birdCard = document.getElementById("birdCard");
 const birdImage = document.getElementById("birdImage");
