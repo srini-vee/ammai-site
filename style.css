@@ -205,8 +205,8 @@ body {
 
   .bird-controls {
     position: absolute;
-    right: 5%;
-    bottom: 8%;
+    right: 2%;
+    bottom: 3%;
     left: auto;
     z-index: 10;
     align-items: flex-start;
