@@ -132,6 +132,8 @@ const birdOverlay = document.getElementById("birdOverlay");
 const closeOverlayButton = document.getElementById("closeOverlayButton");
 const largeBirdImage = document.getElementById("largeBirdImage");
 const largeBirdName = document.getElementById("largeBirdName");
+const largeBirdNote = document.getElementById("largeBirdNote");
+const birdOverlayInner = document.querySelector(".bird-overlay-inner");
 
 let currentAudio = null;
 let currentBirdIndex = null;
@@ -173,6 +175,7 @@ function openBirdOverlay() {
   largeBirdImage.src = currentBird.image;
   largeBirdImage.alt = currentBird.name;
   largeBirdName.textContent = currentBird.name;
+  largeBirdNote.textContent = currentBird.note;
 
   birdOverlay.classList.add("visible");
   birdOverlay.setAttribute("aria-hidden", "false");
@@ -255,6 +258,10 @@ closeOverlayButton.addEventListener("click", (event) => {
 
 birdOverlay.addEventListener("click", () => {
   closeBirdOverlay();
+});
+
+birdOverlayInner.addEventListener("click", (event) => {
+  event.stopPropagation();
 });
 
 document.addEventListener("keydown", (event) => {
