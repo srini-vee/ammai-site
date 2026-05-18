@@ -91,6 +91,11 @@ body {
   filter: sepia(25%) saturate(75%) contrast(92%) brightness(106%);
   opacity: 0.86;
   flex-shrink: 0;
+  cursor: pointer;
+}
+
+.bird-image:hover {
+  opacity: 1;
 }
 
 .bird-card-text {
@@ -135,6 +140,68 @@ body {
   color: rgba(60, 49, 40, 0.95);
 }
 
+.bird-overlay {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(247, 239, 228, 0.72);
+  backdrop-filter: blur(7px);
+  align-items: center;
+  justify-content: center;
+}
+
+.bird-overlay.visible {
+  display: flex;
+}
+
+.bird-overlay-inner {
+  padding: 1rem;
+  border-radius: 22px;
+  background: rgba(255, 248, 235, 0.82);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+  text-align: center;
+}
+
+.large-bird-image {
+  display: block;
+  width: min(420px, 58vw);
+  height: auto;
+  max-height: 58vh;
+  object-fit: contain;
+  border-radius: 16px;
+  filter: sepia(15%) saturate(85%) contrast(94%) brightness(106%);
+  opacity: 0.94;
+}
+
+.large-bird-name {
+  margin-top: 0.65rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(60, 49, 40, 0.86);
+}
+
+.close-overlay-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 1px solid rgba(60, 49, 40, 0.18);
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 248, 235, 0.78);
+  color: rgba(60, 49, 40, 0.78);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close-overlay-button:hover {
+  background: rgba(255, 248, 235, 0.95);
+}
+
 /* Smaller desktop / tablet */
 @media (max-width: 900px) {
   .bird-controls {
@@ -166,6 +233,10 @@ body {
     height: 28px;
     min-width: 28px;
     font-size: 1.15rem;
+  }
+
+  .large-bird-image {
+    width: min(360px, 62vw);
   }
 }
 
@@ -264,5 +335,32 @@ body {
     min-width: 19px;
     font-size: 0.78rem;
     flex-shrink: 0;
+  }
+
+  .bird-overlay {
+    position: fixed;
+  }
+
+  .bird-overlay-inner {
+    padding: 0.75rem;
+    border-radius: 18px;
+  }
+
+  .large-bird-image {
+    width: min(78vw, 320px);
+    max-height: 58vh;
+    border-radius: 14px;
+  }
+
+  .large-bird-name {
+    font-size: 0.9rem;
+  }
+
+  .close-overlay-button {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1.35rem;
   }
 }
