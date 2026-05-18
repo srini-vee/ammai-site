@@ -139,6 +139,7 @@ let currentAudio = null;
 let currentBirdIndex = null;
 let currentBird = null;
 let isPlaying = false;
+let playRequestId = 0;
 
 birdCard.classList.remove("visible");
 birdOverlay.classList.remove("visible");
@@ -186,11 +187,16 @@ function closeBirdOverlay() {
   birdOverlay.setAttribute("aria-hidden", "true");
 }
 
-function stopBirdsong() {
+function stopCurrentAudio() {
   if (currentAudio) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
   }
+}
+
+function stopBirdsong() {
+  playRequestId += 1;
+  stopCurrentAudio();
 
   isPlaying = false;
   birdButton.textContent = "Listen";
@@ -200,17 +206,18 @@ function stopBirdsong() {
 }
 
 function playRandomBirdsong() {
+  const thisRequestId = playRequestId + 1;
+  playRequestId = thisRequestId;
+
   const nextIndex = chooseRandomBirdIndex();
   const bird = birds[nextIndex];
 
-  if (currentAudio) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-
+  stopCurrentAudio();
   closeBirdOverlay();
 
   currentAudio = new Audio(bird.sound);
+  currentAudio.preload = "auto";
+
   currentBirdIndex = nextIndex;
   isPlaying = true;
 
@@ -219,17 +226,46 @@ function playRandomBirdsong() {
   birdButton.textContent = "Stop";
   birdButton.setAttribute("aria-pressed", "true");
 
-  currentAudio.play().catch(() => {
-    stopBirdsong();
-    alert("The birdsong could not play. Please check that the sound file path and filename are correct.");
-  });
-
   currentAudio.addEventListener("ended", () => {
+    if (thisRequestId !== playRequestId) return;
+
     isPlaying = false;
     birdButton.textContent = "Listen";
     birdButton.setAttribute("aria-pressed", "false");
     hideBirdCard();
     closeBirdOverlay();
+  });
+
+  currentAudio.addEventListener("error", () => {
+    if (thisRequestId !== playRequestId) return;
+
+    isPlaying = false;
+    birdButton.textContent = "Listen";
+    birdButton.setAttribute("aria-pressed", "false");
+
+    alert("This birdsong file could not be loaded: " + bird.sound);
+  });
+
+  currentAudio.play().catch((error) => {
+    if (thisRequestId !== playRequestId) return;
+
+    const harmlessRapidClickError =
+      error &&
+      (
+        error.name === "AbortError" ||
+        error.name === "NotAllowedError" ||
+        error.message.includes("interrupted")
+      );
+
+    if (harmlessRapidClickError) {
+      return;
+    }
+
+    isPlaying = false;
+    birdButton.textContent = "Listen";
+    birdButton.setAttribute("aria-pressed", "false");
+
+    alert("This birdsong could not play: " + bird.sound);
   });
 }
 
