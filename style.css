@@ -174,16 +174,18 @@ body {
   border-radius: 16px;
   filter: sepia(15%) saturate(85%) contrast(94%) brightness(106%);
   opacity: 0.94;
-  margin: 0 auto -3.1rem;
+  margin: 0 auto;
 }
 
 .large-bird-name {
-  margin-top: 0;
+  margin-top: -3.4rem;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1rem;
   line-height: 1.15;
   font-weight: 600;
   color: rgba(60, 49, 40, 0.86);
+  position: relative;
+  z-index: 2;
 }
 
 .large-bird-note {
@@ -193,6 +195,8 @@ body {
   font-size: 0.82rem;
   line-height: 1.35;
   color: rgba(60, 49, 40, 0.68);
+  position: relative;
+  z-index: 2;
 }
 
 .close-overlay-button {
@@ -250,7 +254,10 @@ body {
 
   .large-bird-image {
     width: min(360px, 62vw);
-    margin-bottom: -2.7rem;
+  }
+
+  .large-bird-name {
+    margin-top: -2.9rem;
   }
 }
 
@@ -365,11 +372,10 @@ body {
     width: min(78vw, 320px);
     max-height: 48vh;
     border-radius: 14px;
-    margin-bottom: -2.25rem;
   }
 
   .large-bird-name {
-    margin-top: 0;
+    margin-top: -2.35rem;
     font-size: 0.9rem;
   }
 
