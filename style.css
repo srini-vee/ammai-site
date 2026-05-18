@@ -1,3 +1,4 @@
+
 html,
 body {
   margin: 0;
@@ -67,9 +68,9 @@ body {
 .bird-card {
   display: none;
   margin-top: 0.65rem;
-  width: 315px;
-  min-height: 108px;
-  padding: 0.7rem;
+  width: 335px;
+  min-height: 118px;
+  padding: 0.72rem;
   border-radius: 16px;
   background: rgba(255, 248, 235, 0.76);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
@@ -80,12 +81,12 @@ body {
 .bird-card.visible {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.75rem;
 }
 
 .bird-image {
-  width: 64px;
-  height: 64px;
+  width: 78px;
+  height: 78px;
   object-fit: cover;
   border-radius: 12px;
   filter: sepia(25%) saturate(75%) contrast(92%) brightness(106%);
@@ -143,13 +144,13 @@ body {
   }
 
   .bird-card {
-    width: 295px;
-    min-height: 104px;
+    width: 315px;
+    min-height: 112px;
   }
 
   .bird-image {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
   }
 
   .bird-name {
@@ -220,8 +221,8 @@ body {
   }
 
   .bird-card {
-    width: 190px;
-    min-height: 68px;
+    width: 205px;
+    min-height: 76px;
     margin-top: 0.35rem;
     padding: 0.42rem;
     border-radius: 12px;
@@ -230,13 +231,13 @@ body {
 
   .bird-card.visible {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.42rem;
     align-items: center;
   }
 
   .bird-image {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border-radius: 8px;
     flex-shrink: 0;
   }
