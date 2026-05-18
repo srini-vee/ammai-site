@@ -128,11 +128,18 @@ const birdImage = document.getElementById("birdImage");
 const birdName = document.getElementById("birdName");
 const birdNote = document.getElementById("birdNote");
 
+const birdOverlay = document.getElementById("birdOverlay");
+const closeOverlayButton = document.getElementById("closeOverlayButton");
+const largeBirdImage = document.getElementById("largeBirdImage");
+const largeBirdName = document.getElementById("largeBirdName");
+
 let currentAudio = null;
 let currentBirdIndex = null;
+let currentBird = null;
 let isPlaying = false;
 
 birdCard.classList.remove("visible");
+birdOverlay.classList.remove("visible");
 
 function chooseRandomBirdIndex() {
   if (birds.length === 1) return 0;
@@ -147,6 +154,8 @@ function chooseRandomBirdIndex() {
 }
 
 function showBirdCard(bird) {
+  currentBird = bird;
+
   birdImage.src = bird.image;
   birdImage.alt = bird.name;
   birdName.textContent = bird.name;
@@ -156,6 +165,22 @@ function showBirdCard(bird) {
 
 function hideBirdCard() {
   birdCard.classList.remove("visible");
+}
+
+function openBirdOverlay() {
+  if (!currentBird) return;
+
+  largeBirdImage.src = currentBird.image;
+  largeBirdImage.alt = currentBird.name;
+  largeBirdName.textContent = currentBird.name;
+
+  birdOverlay.classList.add("visible");
+  birdOverlay.setAttribute("aria-hidden", "false");
+}
+
+function closeBirdOverlay() {
+  birdOverlay.classList.remove("visible");
+  birdOverlay.setAttribute("aria-hidden", "true");
 }
 
 function stopBirdsong() {
@@ -168,6 +193,7 @@ function stopBirdsong() {
   birdButton.textContent = "Listen";
   birdButton.setAttribute("aria-pressed", "false");
   hideBirdCard();
+  closeBirdOverlay();
 }
 
 function playRandomBirdsong() {
@@ -178,6 +204,8 @@ function playRandomBirdsong() {
     currentAudio.pause();
     currentAudio.currentTime = 0;
   }
+
+  closeBirdOverlay();
 
   currentAudio = new Audio(bird.sound);
   currentBirdIndex = nextIndex;
@@ -198,6 +226,7 @@ function playRandomBirdsong() {
     birdButton.textContent = "Listen";
     birdButton.setAttribute("aria-pressed", "false");
     hideBirdCard();
+    closeBirdOverlay();
   });
 }
 
@@ -212,4 +241,24 @@ birdButton.addEventListener("click", () => {
 nextBirdButton.addEventListener("click", (event) => {
   event.stopPropagation();
   playRandomBirdsong();
+});
+
+birdImage.addEventListener("click", (event) => {
+  event.stopPropagation();
+  openBirdOverlay();
+});
+
+closeOverlayButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  closeBirdOverlay();
+});
+
+birdOverlay.addEventListener("click", () => {
+  closeBirdOverlay();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeBirdOverlay();
+  }
 });
