@@ -58,6 +58,66 @@ const birds = [
     note: "A repeated green note from wooded hills, old trees, gardens, and monsoon edges.",
     sound: "./sounds/white-cheeked-barbet.mp3",
     image: "./birds/white-cheeked-barbet.webp"
+  },
+  {
+    name: "Brahminy Starling",
+    note: "A bright social bird, moving through open trees with whistles, chatter, and soft calls.",
+    sound: "./sounds/brahminy-starling.mp3",
+    image: "./birds/brahminy-starling.webp"
+  },
+  {
+    name: "Yellow-footed Green Pigeon",
+    note: "Soft and mellow among trees, with a gentle sound that feels shaded and calm.",
+    sound: "./sounds/yellow-footed-green-pigeon.mp3",
+    image: "./birds/yellow-footed-green-pigeon.webp"
+  },
+  {
+    name: "White-breasted Waterhen",
+    note: "A strange laughing call from wet edges, gardens, lakes, and hidden green corners.",
+    sound: "./sounds/white-breasted-waterhen.mp3",
+    image: "./birds/white-breasted-waterhen.webp"
+  },
+  {
+    name: "Black Drongo",
+    note: "Sharp and watchful, often calling from open branches with metallic little notes.",
+    sound: "./sounds/black-drongo.mp3",
+    image: "./birds/black-drongo.webp"
+  },
+  {
+    name: "Common Myna",
+    note: "A familiar city voice, full of chatter, whistles, arguments, and everyday presence.",
+    sound: "./sounds/common-myna.mp3",
+    image: "./birds/common-myna.webp"
+  },
+  {
+    name: "Rose-ringed Parakeet",
+    note: "Green flashes across the sky, loud and lively over trees, terraces, and gardens.",
+    sound: "./sounds/rose-ringed-parakeet.mp3",
+    image: "./birds/rose-ringed-parakeet.webp"
+  },
+  {
+    name: "Common Tailorbird",
+    note: "A tiny garden bird with a sharp repeated call from shrubs, hedges, and leaves.",
+    sound: "./sounds/common-tailorbird.mp3",
+    image: "./birds/common-tailorbird.webp"
+  },
+  {
+    name: "Indian Golden Oriole",
+    note: "A golden visitor in leafy trees, carrying a clear, liquid sound through summer.",
+    sound: "./sounds/indian-golden-oriole.mp3",
+    image: "./birds/indian-golden-oriole.webp"
+  },
+  {
+    name: "White-throated Kingfisher",
+    note: "A bold ringing call near water, fields, and trees, bright against the morning.",
+    sound: "./sounds/white-throated-kingfisher.mp3",
+    image: "./birds/white-throated-kingfisher.webp"
+  },
+  {
+    name: "Ashy Prinia",
+    note: "A small restless voice from scrub and garden edges, quick, bright, and repeating.",
+    sound: "./sounds/ashy-prinia.mp3",
+    image: "./birds/ashy-prinia.webp"
   }
 ];
 
