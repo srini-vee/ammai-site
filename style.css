@@ -220,8 +220,8 @@ body {
   }
 
   .bird-card {
-    width: 235px;
-    min-height: 96px;
+    width: 245px !important;
+    min-height: 104px !important;
     margin-top: 0.35rem;
     padding: 0.42rem;
     border-radius: 12px;
@@ -235,9 +235,14 @@ body {
   }
 
   .bird-image {
-    width: 58px;
-    height: 58px;
-    border-radius: 9px;
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
+    min-height: 72px !important;
+    max-width: 72px !important;
+    max-height: 72px !important;
+    border-radius: 10px;
+    object-fit: cover;
     flex-shrink: 0;
   }
 
@@ -252,8 +257,8 @@ body {
   }
 
   .bird-note {
-    font-size: 0.45rem;
-    line-height: 1.18;
+    font-size: 0.43rem;
+    line-height: 1.16;
     margin-top: 0.15rem;
   }
 
